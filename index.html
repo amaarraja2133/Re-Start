@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#0a0e1a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Streak" />
+  <meta name="description" content="Simple day-by-day streak tracker" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+  <title>Streak Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="app">
+    <header>
+      <h1>Streak</h1>
+      <p class="subtitle">One day at a time</p>
+    </header>
+
+    <main>
+      <section class="streak-display">
+        <div class="days" id="days">0</div>
+        <div class="days-label">days clean</div>
+        <div class="time-detail" id="timeDetail">Start your streak</div>
+      </section>
+
+      <section class="progress-section">
+        <div class="bar-group">
+          <div class="bar-header">
+            <span>Today</span>
+            <span id="todayPercent">0%</span>
+          </div>
+          <div class="progress-track big">
+            <div class="progress-fill" id="todayBar"></div>
+          </div>
+        </div>
+
+        <div class="bar-group">
+          <div class="bar-header">
+            <span id="goalLabel">Next goal: 1 day</span>
+            <span id="goalPercent">0%</span>
+          </div>
+          <div class="progress-track small">
+            <div class="progress-fill" id="goalBar"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="startBtn" class="btn primary hidden">Start Streak</button>
+        <button id="relapseBtn" class="btn danger">I Relapsed</button>
+      </section>
+
+      <section class="milestones" id="milestones"></section>
+    </main>
+
+    <footer>
+      <p>Progress is saved on this device</p>
+    </footer>
+  </div>
+
+  <div id="confirmModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>Reset streak?</h2>
+      <p>This will set your streak back to zero.</p>
+      <div class="modal-actions">
+        <button id="cancelReset" class="btn">Cancel</button>
+        <button id="confirmReset" class="btn danger">Yes, reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
